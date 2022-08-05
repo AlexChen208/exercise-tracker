@@ -1,25 +1,34 @@
-# MERN-Stack Infrastructure
+# Exercise Tracker
 
-Clone this repo to provide the starter code for a comprehensive MERN-Stack project including token-based authentication.
+### Purpose: Keeping track of your exercise to know what you need/want to workout on
+<hr>
 
-## Project Start Checklist
+### Getting Started:
+<hr>
 
-- [ ] Run `npm install` to download all needed NPM packages
-- [ ] Run `npm run build` to generate a build folder for your project
-- [ ] Create a `.env` file with these variables:
+### LINK:
+<hr>
 
-```
-DATABASE_URL=YOUR_DATABASE_GOESHERE
-SECRET=YOUR_SECRET_HERE
-```
+### Screenshots:
+<hr>
 
-- [ ] React server running on localhost:3000 after running `npm start`
-- [ ] Node.js backend running on localhost:3001 after running `nodemon server.js`
-- [ ] Set up this project's Github page
-  - [ ] rename this folder with the `mv` command: `mv project-4-starter MY_PROJECT_NAME`
-  - [ ] run `rm -rf .git` in the root of this repo to remove any trace of where you downloaded this
-  - [ ] run `git init` to remake this starter into your own git repo
-  - [ ] go to `github.com` and create a new online repo for you to upload to
-  - [ ] make a commit on your local computer and then push to github
-- [ ] install a component library or place a CSS CDN in your `public/index.html`
-- [ ] Start coding!
+### [ERD] (https://lucid.app/lucidchart/aea93f5d-99c2-4647-aa18-285262b172de/edit?viewport_loc=119%2C-54%2C1579%2C752%2C0_0&invitationId=inv_a0b51f73-a744-4dbf-bbad-bcff50593fc1#)
+![ERD](images/ERD.png)
+<hr>
+
+### [TRELLO BOARD] (https://trello.com/b/LiwJCxPh/exercise-tracker)
+![Trello Board](images/trello.png)
+<hr>
+
+### [WIREFRAME] (https://www.figma.com/file/Np16NcmnRl4ZWcgpoM4BXb/Project-3-WireFrame?node-id=2%3A64)
+![wireframe](images/wireframe1.png)
+![wireframe](images/wireframe2.png)
+![wireframe](images/wireframe3.png)
+<hr>
+
+## USED TECHNOLOGIES:
+
+<hr>
+
+## ICEBOX: 
+
