@@ -4,8 +4,10 @@ export default function WorkoutActivity({workouts}) {
         <WorkoutItem workout={workout} key={idx} />
     ))
     return (
+        <>
         <ul>
             {workoutItem}
         </ul>
+        </>
     )
 }

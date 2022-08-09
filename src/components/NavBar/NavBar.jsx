@@ -12,9 +12,9 @@ export default function NavBar({ user, setUser }) {
     <nav>
       <span>Welcome, {user.name}</span>
       &nbsp; | &nbsp;
-      <Link to="/list">Create Exercise</Link>
+      <Link to="/list">Create Exercise Log</Link>
       &nbsp; | &nbsp;
-      <Link to="/home">Exercise Log</Link>
+      <Link to="/">View All Exercise Log</Link>
       &nbsp; | &nbsp;
       <Link to="" onClick={handleLogOut}>
         Log Out
