@@ -1,5 +1,6 @@
 import './WorkoutForm.css'
 import {useState} from 'react'
+import * as workoutsAPI from '../../utilities/workouts-api'
 export default function WorkoutForm({addWorkout}) {
     const [newWorkout, setNewWorkout] = useState({
         name: "",
@@ -14,9 +15,10 @@ export default function WorkoutForm({addWorkout}) {
         setNewWorkout(newNewWorkout)
     }
 
-    function handleAddWorkout(event) {
+    async function handleAddWorkout(event) {
         event.preventDefault();
-        addWorkout(newWorkout);
+        const workoutRes = await workoutsAPI.addWorkouts(newWorkout)
+        addWorkout(workoutRes);
         setNewWorkout({
           name: "",
           reps: ""

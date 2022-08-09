@@ -8,10 +8,6 @@ export default function List() {
     function addWorkout(workout) {
         setWorkOuts([...workouts, workout])
     }
-    
-    useEffect(function() {
-        workOutsAPI.addWorkouts()
-    }, [])
 
     async function handleSubmit(workoutData) {
         const updatedWorkOut = await workOutsAPI.addWorkouts(workoutData)
