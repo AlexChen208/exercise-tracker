@@ -1,7 +1,9 @@
+const workoutsList = require('../../models/workout')
+
 module.exports = {
-    create,
+    index,
   };
 
-  async function create(req, res) {
-    
+  async function index(req, res) {
+    console.log("working")
   }

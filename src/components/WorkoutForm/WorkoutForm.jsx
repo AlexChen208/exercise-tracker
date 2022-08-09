@@ -24,7 +24,7 @@ export default function WorkoutForm({addWorkout}) {
     <>
       <form action="" onSubmit={handleAddWorkout}>
         <label>Add Workout</label>
-        <input type="text" value={newWorkout.name} onChange={handleChange} placeholder="Add Workout" required></input>
+        <input type="text" name="name" value={newWorkout.name} onChange={handleChange} placeholder="Add Workout" required></input>
         <button type="submit">Enter</button>
       </form>
     </>

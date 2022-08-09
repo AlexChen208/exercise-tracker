@@ -1,8 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const workoutsCtrl = require('../../controllers/api/a');
+const workoutsCtrl = require('../../controllers/api/workouts');
 
-// GET /api/orders/cart
-router.get('/activity', workoutsCtrl.create);
+// routes come from utilities and how they relate
+// All routes start with /api/workouts
+// GET /api/workouts/activity 
+router.post('/activity', workoutsCtrl.index);
 
 module.exports = router;
