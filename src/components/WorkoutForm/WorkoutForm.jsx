@@ -1,24 +1,25 @@
-import './WorkoutForm.css'
-import {useState} from 'react'
-import * as workoutsAPI from '../../utilities/workouts-api'
-export default function WorkoutForm({addWorkout}) {
+import {useState, useEffect} from 'react'
+import * as workOutsAPI from '../../utilities/workouts-api'
+
+export default function WorkoutForm() {
     const [newWorkout, setNewWorkout] = useState({
         name: "",
         reps: ""
     })
 
     function handleChange(event) {
-        const newNewWorkout = {
+        let newNewWorkout = {
             ...newWorkout,
             [event.target.name]: event.target.value
         }
         setNewWorkout(newNewWorkout)
     }
 
-    async function handleAddWorkout(event) {
+
+    async function handleSubmit(event) {
         event.preventDefault();
-        const workoutRes = await workoutsAPI.addWorkouts(newWorkout)
-        addWorkout(workoutRes);
+        const workoutRes = await workOutsAPI.addWorkouts(newWorkout)
+        console.log(workoutRes)
         setNewWorkout({
           name: "",
           reps: ""
@@ -27,11 +28,11 @@ export default function WorkoutForm({addWorkout}) {
 
   return (
     <>
-      <form className="WorkoutForm" onSubmit={handleAddWorkout}>
+      <form onSubmit={handleSubmit}>
         <label>Add Workout</label>
         <input type="text" name="name" value={newWorkout.name} onChange={handleChange} placeholder="Add Workout" required></input>
         <input type="text" name="reps" value={newWorkout.reps} onChange={handleChange} placeholder="Add Repetitions" required></input>
-        <button type="submit" className="btn btn-primary">Enter</button>
+        <button type="submit">Enter</button>
       </form>
     </>
   );
