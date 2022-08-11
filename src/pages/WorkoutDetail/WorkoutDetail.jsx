@@ -1,16 +1,50 @@
 import WorkoutForm from '../../components/WorkoutForm/WorkoutForm'
 import WorkoutList from '../../components/WorkoutList/WorkoutList'
-export default function WorkoutDetail({workouts}) {
+import './WorkoutDetail.css'
+import { useState, useEffect} from "react";
+import * as workOutsAPI from '../../utilities/workouts-api'
+
+export default function WorkoutDetail({user}) {
+    const [workouts, setWorkOuts] = useState("")
+
+    useEffect(function() {
+        async function getAllWorkouts() {
+            let users = await workOutsAPI.getAllWorkouts()
+            setWorkOuts(users)
+        }
+        getAllWorkouts()
+    }, [])
+
+    function addWorkout(workout) {
+        workOutsAPI.addWorkouts(workout)
+        setWorkOuts([...workouts, workout])
+    }
+
+    // async function getWorkout() {
+    //     let workout = await workOutsAPI.getAllWorkouts()
+    //     console.log(workout)
+    //     setWorkOuts(workout)
+    //     } 
+
+    // useEffect(function() {
+    //     if (user) {
+    //       getWorkout()
+    //     }
+    //   }, [user])
+
+
 
     return (
         <div>
+        <span className="date">{new Date().toLocaleDateString()}</span>
         { workouts && workouts.length > 0 ?
 
             <>
-                <WorkoutList workouts={workouts} />
-                <hr />
+                <div className="form">
                 <h2>Create An Exercise List</h2>
-                <WorkoutForm />
+                <WorkoutForm addWorkout={addWorkout}/>
+                </div>
+                <WorkoutList workouts={workouts} />
             </>
         :
             <>

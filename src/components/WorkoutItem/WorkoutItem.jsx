@@ -3,8 +3,10 @@ export default function WorkoutItem({workout}) {
         <>
             { workout ?
                 <div>
-                    <p>{workout.name}</p>
-                    <p>{workout.reps}</p>
+                    <li>
+                        {workout.name}
+                        {workout.reps}
+                    </li>
                 </div>
             :
                 <p>no homes</p>
