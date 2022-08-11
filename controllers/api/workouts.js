@@ -3,11 +3,11 @@ const Workout = require('../../models/workout')
 module.exports = { 
   index,
   create,
+  delete: deleteWorkout,
   };
 
   async function index(req, res) {
     const workout = await Workout.find({user : req.user._id})
-    // const property = await Property.getAllProperties();
     res.json(workout)
 }
 
@@ -16,3 +16,8 @@ module.exports = {
     console.log(newWorkOut)
     return res.json(newWorkOut)
   }
+
+async function deleteWorkout(req, res) {
+  const deleteWorkout = await Workout.findByIdAndRemove(req.params.id)
+  return res.json(deleteWorkout)
+}

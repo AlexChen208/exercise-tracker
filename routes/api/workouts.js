@@ -9,4 +9,6 @@ router.get('/index', workoutsCtrl.index);
 
 router.post('/activity', workoutsCtrl.create);
 
+router.delete('/delete/:id', workoutsCtrl.delete)
+
 module.exports = router;

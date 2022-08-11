@@ -1,38 +1,26 @@
 import WorkoutForm from '../../components/WorkoutForm/WorkoutForm'
 import WorkoutList from '../../components/WorkoutList/WorkoutList'
 import './WorkoutDetail.css'
-import { useState, useEffect} from "react";
+import { useState, useEffect} from "react"
+import { Link, useNavigate} from 'react-router-dom';
 import * as workOutsAPI from '../../utilities/workouts-api'
 
 export default function WorkoutDetail({user}) {
     const [workouts, setWorkOuts] = useState("")
+    const navigate = useNavigate()
 
     useEffect(function() {
         async function getAllWorkouts() {
-            let users = await workOutsAPI.getAllWorkouts()
-            setWorkOuts(users)
+            let workout = await workOutsAPI.getAllWorkouts()
+            setWorkOuts(workout)
         }
         getAllWorkouts()
     }, [])
 
-    function addWorkout(workout) {
-        workOutsAPI.addWorkouts(workout)
-        setWorkOuts([...workouts, workout])
+    async function addWorkout(workout) {
+        let workoutRes = await workOutsAPI.addWorkouts(workout)
+        setWorkOuts([...workouts, workoutRes])
     }
-
-    // async function getWorkout() {
-    //     let workout = await workOutsAPI.getAllWorkouts()
-    //     console.log(workout)
-    //     setWorkOuts(workout)
-    //     } 
-
-    // useEffect(function() {
-    //     if (user) {
-    //       getWorkout()
-    //     }
-    //   }, [user])
-
-
 
     return (
         <div>
@@ -44,12 +32,12 @@ export default function WorkoutDetail({user}) {
                 <h2>Create An Exercise List</h2>
                 <WorkoutForm addWorkout={addWorkout}/>
                 </div>
-                <WorkoutList workouts={workouts} />
+                <WorkoutList setWorkOuts={setWorkOuts} navigate={navigate} workouts={workouts}/>
             </>
         :
             <>
                 <h1>No Current Exercises</h1>
-                <WorkoutForm/>
+                <WorkoutForm addWorkout={addWorkout}/>
             </>
         }
     </div>  

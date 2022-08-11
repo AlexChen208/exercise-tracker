@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 
 const workoutSchema = new Schema({
-  name: { type: String},
+  name: {type: String},
   reps: {type: String},
 }, {
   timestamps: true

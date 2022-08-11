@@ -11,4 +11,8 @@ export function addWorkouts(workoutData) {
     return sendRequest(`${BASE_URL}/activity`, 'POST', workoutData);
   }
 
+export function deleteWorkout(workout) {
+  return sendRequest(`${BASE_URL}/delete/${workout}`, 'DELETE')
+}
+
 
