@@ -1,4 +1,5 @@
 import * as workOutsAPI from '../../utilities/workouts-api'
+import UpdateWorkout from '../UpdateWorkout/UpdateWorkout'
 
 export default function WorkoutItem({workout, navigate, setWorkOuts, handleDelete}) {
 
@@ -13,6 +14,7 @@ export default function WorkoutItem({workout, navigate, setWorkOuts, handleDelet
                     <form>
                         <button type="submit" onClick={() => handleDelete(workout._id)}>X</button>
                     </form>
+                    <UpdateWorkout />
                 </div>
             :
                 <p>No Exercise</p>

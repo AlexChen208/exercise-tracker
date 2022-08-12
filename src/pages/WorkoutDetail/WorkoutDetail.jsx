@@ -7,7 +7,6 @@ import * as workOutsAPI from '../../utilities/workouts-api'
 
 export default function WorkoutDetail({user}) {
     const [workouts, setWorkOuts] = useState([])
-    const navigate = useNavigate()
 
     useEffect(function() {
         async function getAllWorkouts() {
@@ -27,6 +26,7 @@ export default function WorkoutDetail({user}) {
         const workoutsCopy = [...workouts]
         const newWorkouts = workoutsCopy.filter(w => w._id === workout._id)
         setWorkOuts(newWorkouts)
+        console.log('this is the workout', newWorkouts) 
     }
 
     return (
@@ -39,7 +39,7 @@ export default function WorkoutDetail({user}) {
                 <h2>Create An Exercise List</h2>
                 <WorkoutForm addWorkout={addWorkout}/>
                 </div>
-                <WorkoutList navigate={navigate} handleDelete={handleDelete} setWorkOuts={setWorkOuts} workouts={workouts}/>
+                <WorkoutList handleDelete={handleDelete} setWorkOuts={setWorkOuts} workouts={workouts}/>
             </>
         :
             <>

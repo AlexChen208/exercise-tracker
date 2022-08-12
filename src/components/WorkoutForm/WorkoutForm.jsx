@@ -17,8 +17,6 @@ export default function WorkoutForm({addWorkout}) {
 
     async function handleSubmit(event) {
         event.preventDefault()
-        console.log(newWorkout)
-        console.log(addWorkout)
         addWorkout(newWorkout)
         setNewWorkout({
           name: "",
