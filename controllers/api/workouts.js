@@ -4,6 +4,7 @@ module.exports = {
   index,
   create,
   delete: deleteWorkout,
+  update,
   };
 
   async function index(req, res) {
@@ -20,4 +21,9 @@ module.exports = {
 async function deleteWorkout(req, res) {
   const deleteWorkout = await Workout.findByIdAndRemove(req.params.id)
   return res.json(deleteWorkout)
+}
+
+async function update(req, res) {
+  const updateWorkout = await Workout.findByIdAndUpdate(req.params.id, req.body)
+  return res.json(updateWorkout)
 }

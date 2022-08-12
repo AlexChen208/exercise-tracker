@@ -15,4 +15,8 @@ export function deleteWorkout(workout) {
   return sendRequest(`${BASE_URL}/delete/${workout}`, 'DELETE')
 }
 
+export function updateWorkout(workout, updateWorkout) {
+  return sendRequest(`${BASE_URL}/${workout}`, 'PUT', updateWorkout)
+}
+
 
