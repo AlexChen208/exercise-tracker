@@ -1,11 +1,6 @@
 import * as workOutsAPI from '../../utilities/workouts-api'
 
-export default function WorkoutItem({workout, navigate, setWorkOuts}) {
-
-    async function handleDelete(workout) {
-        await workOutsAPI.deleteWorkout(workout)
-        navigate('/detail')
-    }
+export default function WorkoutItem({workout, navigate, setWorkOuts, handleDelete}) {
 
     return (
         <>

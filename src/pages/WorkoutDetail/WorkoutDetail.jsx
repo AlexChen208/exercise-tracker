@@ -6,7 +6,7 @@ import { Link, useNavigate} from 'react-router-dom';
 import * as workOutsAPI from '../../utilities/workouts-api'
 
 export default function WorkoutDetail({user}) {
-    const [workouts, setWorkOuts] = useState("")
+    const [workouts, setWorkOuts] = useState([])
     const navigate = useNavigate()
 
     useEffect(function() {
@@ -22,6 +22,13 @@ export default function WorkoutDetail({user}) {
         setWorkOuts([...workouts, workoutRes])
     }
 
+    async function handleDelete(workout) {
+        await workOutsAPI.deleteWorkout(workout)
+        const workoutsCopy = [...workouts]
+        const newWorkouts = workoutsCopy.filter(w => w._id === workout._id)
+        setWorkOuts(newWorkouts)
+    }
+
     return (
         <div>
         <span className="date">{new Date().toLocaleDateString()}</span>
@@ -32,7 +39,7 @@ export default function WorkoutDetail({user}) {
                 <h2>Create An Exercise List</h2>
                 <WorkoutForm addWorkout={addWorkout}/>
                 </div>
-                <WorkoutList setWorkOuts={setWorkOuts} navigate={navigate} workouts={workouts}/>
+                <WorkoutList navigate={navigate} handleDelete={handleDelete} setWorkOuts={setWorkOuts} workouts={workouts}/>
             </>
         :
             <>
