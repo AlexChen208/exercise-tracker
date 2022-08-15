@@ -1,4 +1,4 @@
-import * as workOutsAPI from '../../utilities/workouts-api'
+import './WorkoutItem.css'
 import UpdateWorkout from '../UpdateWorkout/UpdateWorkout'
 
 export default function WorkoutItem({workout, handleDelete, updateWorkout}) {
@@ -6,9 +6,9 @@ export default function WorkoutItem({workout, handleDelete, updateWorkout}) {
         <>
             { workout ?
                 <div>
-                    <li>
-                        {workout.name}
-                        {workout.reps}
+                    <li className=''>
+                        <div>Workout: {workout.name}</div>
+                        <div className='reps'>Reps: {workout.reps}</div>
                     </li>
                     <form>
                     <button onClick={() => handleDelete(workout._id)}>X</button>

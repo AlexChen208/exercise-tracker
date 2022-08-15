@@ -26,7 +26,7 @@ export default function UpdateWorkout({workout, updateWorkout}) {
 
     return (
         <form onSubmit={handleSubmit}>
-            <label>Edit</label>
+            <label>Edit: </label>
             <input type="text" name="name" value={updateWorkouts.name} onChange={handleChange} placeholder="Change Name"></input>
             <input type="text" name="reps" value={updateWorkouts.reps} onChange={handleChange} placeholder="Change Reps"></input>
             <button type="submit">Edit</button>

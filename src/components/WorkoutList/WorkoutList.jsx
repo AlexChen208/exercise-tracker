@@ -9,9 +9,6 @@ export default function WorkoutList({workouts, handleDelete, updateWorkout}) {
                 <WorkoutItem workout={workout} handleDelete={ handleDelete} updateWorkout={updateWorkout} key={idx} />
               ))}
             </ul>
-         
-          
-          
         </>
         
       )

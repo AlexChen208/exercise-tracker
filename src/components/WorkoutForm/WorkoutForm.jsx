@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react'
-
+import './WorkoutForm.css'
 export default function WorkoutForm({addWorkout}) {
     const [newWorkout, setNewWorkout] = useState({
         name: "",
@@ -25,13 +25,16 @@ export default function WorkoutForm({addWorkout}) {
       }
 
   return (
-    <>
-      <form className="WorkoutForm" onSubmit={handleSubmit}>
-        <label>Add Workout</label>
-        <input type="text" name="name" value={newWorkout.name} onChange={handleChange} placeholder="Add Workout" required></input>
-        <input type="text" name="reps" value={newWorkout.reps} onChange={handleChange} placeholder="Add Repetitions" required></input>
-        <button type="submit">Enter</button>
-      </form>
-    </>
-  );
+    <form className="Workoutform"onSubmit={handleSubmit}>
+  <div class="form-group">
+    <label>Add Workout</label>
+    <input type="text" name="name" value={newWorkout.name} onChange={handleChange} placeholder="Add Workout" required></input>
+  </div>
+  <div class="form-group">
+    <label>Add Repetitions</label>
+    <input type="text" name="reps" value={newWorkout.reps} onChange={handleChange} placeholder="Add Repetitions" required></input>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+  )
 }
