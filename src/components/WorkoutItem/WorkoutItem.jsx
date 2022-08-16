@@ -11,7 +11,7 @@ export default function WorkoutItem({workout, handleDelete, updateWorkout}) {
                         <div className='reps'>Reps: {workout.reps}</div>
                     </li>
                     <form>
-                    <button onClick={() => handleDelete(workout._id)}>X</button>
+                    <button className="btn btn-danger"  onClick={() => handleDelete(workout._id)}>X</button>
                     </form>
                     <UpdateWorkout workout={workout} updateWorkout={updateWorkout}/>
                 </div>
