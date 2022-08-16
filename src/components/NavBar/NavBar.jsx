@@ -9,21 +9,11 @@ export default function NavBar({ user, setUser }) {
   }
 
   return (
-    // <nav>
-    //   <span>Welcome, {user.name}</span>
-    //   &nbsp; | &nbsp;
-    //   <Link to="/detail">Create Exercise Log</Link>
-    //   &nbsp; | &nbsp;
-    //   <Link to="" onClick={handleLogOut}>
-    //     Log Out
-    //   </Link>
-    // </nav>
     <nav className="navbar navbar-expand-lg bg-light">
     <div className="container-fluid">
-    <span className="navbar-brand" href="#">Welcome, {user.name}</span>
       <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div className="navbar-nav">
-          <Link to="/detail" className="nav-link">Create Exercise List</Link>
+          <Link to="/" className="nav-link">Create Exercise List</Link>
           <Link to="" className="nav-link" onClick={handleLogOut}>
             Log Out
           </Link>

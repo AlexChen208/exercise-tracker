@@ -15,7 +15,6 @@ module.exports = {
   async function create(req, res) {
     req.body.user = req.user._id
     const newWorkOut = await Workout.create(req.body)
-    console.log(newWorkOut)
     return res.json(newWorkOut)
   }
 

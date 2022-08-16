@@ -1,6 +1,5 @@
 import { Component, useState } from "react";
 import { signUp } from "../../utilities/users-service";
-import { Link } from "react-router-dom";
 
 export default class SignUpForm extends Component {
   state = {
@@ -110,9 +109,7 @@ export default class SignUpForm extends Component {
                   <div>
                     <p className="mb-0">
                       Have an account?{" "}
-                      <Link to="/signUp" className="text-white-50 fw-bold">
-                        Login
-                      </Link>
+                      <button className="text-black-50 fw-bold" onClick={() => this.props.setShowSignUp(!this.props.showSignUp)}>{this.props.showSignUp ? 'Log In' : 'Sign Up'}</button>
                     </p>
                   </div>
                 </div>
@@ -122,5 +119,22 @@ export default class SignUpForm extends Component {
         </div>
       </section>
     );
-  }
 }
+}
+
+{/* <div>
+<div className="form-container">
+  <form autoComplete="off" onSubmit={this.handleSubmit}>
+    <label>Name</label>
+    <input type="text" name="name" value={this.state.name} onChange={this.handleChange} required />
+    <label>Email</label>
+    <input type="email" name="email" value={this.state.email} onChange={this.handleChange} required />
+    <label>Password</label>
+    <input type="password" name="password" value={this.state.password} onChange={this.handleChange} required />
+    <label>Confirm</label>
+    <input type="password" name="confirm" value={this.state.confirm} onChange={this.handleChange} required />
+    <button type="submit" disabled={disable}>SIGN UP</button>
+  </form>
+</div>
+<p className="error-message">&nbsp;{this.state.error}</p>
+</div> */}

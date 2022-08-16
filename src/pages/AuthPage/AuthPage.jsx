@@ -6,14 +6,13 @@ import './AuthPage.css'
 export default function AuthPage({ setUser }) {
     const [showSignUp, setShowSignUp] = useState(false)
     return (
-    <main>
-      <h1 className="title">Exercise Tracker</h1>
+      <>
+      <h1>Exercise Tracker</h1>
       { showSignUp ?
-          <SignUpForm setUser={setUser} />
+          <SignUpForm setUser={setUser} setShowSignUp={setShowSignUp} showSignUp={showSignUp}/>
           :
-          <LoginForm setUser={setUser} />
+          <LoginForm setUser={setUser} setShowSignUp={setShowSignUp} showSignUp={showSignUp}/>
       }
-      <button onClick={() => setShowSignUp(!showSignUp)}>{showSignUp ? 'Log In' : 'Sign Up'}</button>
-    </main>
+      </>
     )
 }

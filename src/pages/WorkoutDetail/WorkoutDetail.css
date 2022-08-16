@@ -1,10 +1,23 @@
 .date {
     margin-top: 5px;
-    position: absolute;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-35px) translateY(20px);
+    line-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.form {
+.name {
+    transform: translateX(1080px) translateY(-20px);
+}
 
+.no {
+    transform: translateX(10px) translateY(-70px);
+    margin-right: 10px;
+    height: 10px
+}
+
+.WorkoutDetailTitle {
+    text-align: center;
 }

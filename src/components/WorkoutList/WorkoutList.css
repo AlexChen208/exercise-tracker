@@ -1,0 +1,4 @@
+.list {
+    transform: translateX(30px) translateY(-245px);
+    position: absolute;
+}
