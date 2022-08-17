@@ -5,6 +5,7 @@ Create a list of exercise needed to get that summer body! Or if you want to main
 <hr>
 
 ### LINK:
+https://exercise-tracker-p4.herokuapp.com/
 <hr>
 
 ### Getting Started:
@@ -18,10 +19,9 @@ Create a list of exercise needed to get that summer body! Or if you want to main
 ![Trello Board](images/trello.png)
 <hr>
 
-### [WIREFRAME] (https://www.figma.com/file/Np16NcmnRl4ZWcgpoM4BXb/Project-3-WireFrame?node-id=2%3A64)
+### [WIREFRAME] (https://www.figma.com/file/l7IhW2mHM203nv0nZCgxyZ/Project-4-wireframe?node-id=0%3A1)
 ![wireframe](images/wireframe1.png)
 ![wireframe](images/wireframe2.png)
-![wireframe](images/wireframe3.png)
 <hr>
 
 ## USED TECHNOLOGIES:
@@ -29,9 +29,11 @@ Create a list of exercise needed to get that summer body! Or if you want to main
 - Express
 - React
 - Node
+- Bootstrap
 <hr>
 
 ## UNSOLVED PROBLEMS:
+- N/A
 
 ## FUTURE ENHANCEMENTS: 
 - Create a log 
