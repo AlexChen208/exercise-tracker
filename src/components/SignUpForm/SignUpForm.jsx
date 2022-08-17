@@ -1,6 +1,6 @@
 import { Component, useState } from "react";
 import { signUp } from "../../utilities/users-service";
-
+import './SignUpForm.css'
 export default class SignUpForm extends Component {
   state = {
     name: "",
@@ -46,7 +46,8 @@ export default class SignUpForm extends Component {
             <div className="col-12 col-md-8 col-lg-6 col-xl-5">
               <div className="card bg-dark text-white">
                 <div className="card-body p-5 text-center">
-                  <div className="mb-md-5 mt-md-4 pb-5">
+                  <div className="mb-md-5 mt-md-4 pb-5 SignUpForm" >
+                    <h1>Maxium Pump AYOO?</h1>
                     <h2 className="fw-bold mb-2 text-uppercase">Sign Up</h2>
                     <p className="text-white-50 mb-5">
                       Fill out the credentials on the bottom

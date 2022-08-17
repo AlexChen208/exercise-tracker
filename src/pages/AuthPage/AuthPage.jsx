@@ -7,7 +7,6 @@ export default function AuthPage({ setUser }) {
     const [showSignUp, setShowSignUp] = useState(false)
     return (
       <>
-      <h1>Exercise Tracker</h1>
       { showSignUp ?
           <SignUpForm setUser={setUser} setShowSignUp={setShowSignUp} showSignUp={showSignUp}/>
           :
