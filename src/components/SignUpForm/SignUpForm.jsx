@@ -48,9 +48,6 @@ export default class SignUpForm extends Component {
                 <div className="card-body p-5 text-center">
                   <div className="mb-md-5 mt-md-4 pb-5 SignUpForm" >
                     <h1>Maxium Pump AYOO?</h1>
-                    <p className="text-white-50 mb-5">
-                      Fill out the credentials on the bottom
-                    </p>
 
                     <form autoComplete="off" onSubmit={this.handleSubmit}>
                       <div className="form-outline form-white mb-4">
