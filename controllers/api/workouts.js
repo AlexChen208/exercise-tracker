@@ -7,15 +7,15 @@ module.exports = {
   update,
   };
 
-  async function index(req, res) {
-    const workout = await Workout.find({user : req.user._id})
-    res.json(workout)
+async function index(req, res) {
+  const workout = await Workout.find({user : req.user._id})
+  res.json(workout)
 }
 
-  async function create(req, res) {
-    req.body.user = req.user._id
-    const newWorkOut = await Workout.create(req.body)
-    return res.json(newWorkOut)
+async function create(req, res) {
+  req.body.user = req.user._id
+  const newWorkOut = await Workout.create(req.body)
+  return res.json(newWorkOut)
   }
 
 async function deleteWorkout(req, res) {
